@@ -1,11 +1,15 @@
 #! /bin/bash
 set -e
 
+# apt-get update
+# apt-get install
+# exit 0
+
 # Place for local datastore
 mkdir -p /datastore
 
 # Update system dependencies
-apt-get update && apt-get upgrade -y
+apt-get update # && apt-get upgrade -y
 
 # The datastore emulator requires grpcio
 python -m pip install --upgrade pip
@@ -28,9 +32,11 @@ if [ "$(uname -m)" = "aarch64" ]; then
 fi
 
 echo "Running npm install... this may take a while..."
-npm install
+npm install --force
 
 # Install the Firebase tools for the Firebase emulator
 npm install -g firebase-tools
 
-./ops/build/run_buildweb.sh
+# npm install -g uglify-js
+
+# ./ops/build/run_buildweb.sh

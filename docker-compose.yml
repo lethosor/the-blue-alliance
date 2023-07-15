@@ -2,10 +2,10 @@ version: "3"
 
 services:
   tba:
-    # image: ghcr.io/the-blue-alliance/the-blue-alliance/tba-py3-dev:latest
-    build:
-      context: ./
-      dockerfile: ./ops/dev/docker/Dockerfile
+    image: ghcr.io/the-blue-alliance/the-blue-alliance/tba-py3-dev:latest
+    # build:
+    #   context: ./
+    #   dockerfile: ./ops/dev/docker/Dockerfile
     volumes:
       - ./:/tba:delegated
     tty: true
